@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import gameBoard from "../components/GameBoard";
-import FireModal from "../components/FireModal";
 
 const PlayerGridsContainer = styled.div`
   box-sizing: border-box;
@@ -9,11 +8,6 @@ const PlayerGridsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 15rem;
-`;
-
-const FireDiv = styled.div`
-  display: flex;
-  flex-direction: column;
 `;
 
 const GridSqrSea = styled.div`
@@ -25,30 +19,8 @@ const GridSqrSea = styled.div`
   border: 0.5px solid #f0f8ff;
 `;
 
-const FireButton = styled.button`
-  height: 5rem;
-  width: 5rem;
-  border-radius: 5rem;
-  border-color: #aa0000;
-  background-color: #ef0107;
-  color: white;
-  font-family: "Bangers", cursive;
-  font-size: 2rem;
-  &:hover {
-    background-color: #aa0000;
-    cursor: pointer;
-  }
-`;
-
-const CoordinatesModal = styled.input``;
-
 const PlayerBattleGrid = () => {
   let [isShip, setIsShip] = useState(false);
-  let [showModal, setShowModal] = useState(false);
-
-  const openModal = () => {
-    setShowModal((prev) => !prev);
-  };
 
   return (
     <>
@@ -84,10 +56,6 @@ const PlayerBattleGrid = () => {
           return <GridSqrSea key={key}>{ele}</GridSqrSea>;
         })}
       </PlayerGridsContainer>
-      <FireDiv>
-        <FireButton onClick={openModal}>Fire!</FireButton>
-        <FireModal showModal={showModal} setShowModal={setShowModal} />
-      </FireDiv>
     </>
   );
 };
