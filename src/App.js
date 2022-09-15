@@ -1,4 +1,5 @@
 import MainView from "./views/MainView";
+import injectContext from "./store/appContext";
 import "./App.css";
 
 function App() {
@@ -9,4 +10,4 @@ function App() {
   );
 }
 
-export default App;
+export default injectContext(App);

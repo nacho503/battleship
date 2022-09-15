@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import PlayerBattleGrid from "./PlayerBattleGrid";
 import CompBattleGrid from "./CompBattleGrid";
 
@@ -17,8 +17,6 @@ const Blogo = styled.h1`
   font-family: "Montserrat", sans-serif;
   /* font-family: "Bangers", cursive; */
 `;
-
-const NewGameButton = styled.button``;
 
 //End Controls Container
 
