@@ -4,6 +4,7 @@ import enemyGameBoard from "../components/EnemyGameBoard";
 import { YAxis } from "./YAxis";
 
 import { Context } from "../store/appContext";
+import { XAxis } from "./XAxis";
 
 const CompGridsContainer = styled.div`
   box-sizing: border-box;
@@ -41,6 +42,11 @@ const BattleGridsContainerGridY = styled.div`
   display: flex;
 `;
 
+const BattleGridsContainerGridX = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const FireButton = styled.button`
   height: 5rem;
   width: 5rem;
@@ -76,15 +82,12 @@ const CompBattleGrid = () => {
   let [fireY, setFireY] = useState("");
 
   let fireButtonClick = (x, y) => {
-    console.log(x, y);
     const newArray = [...enemyArray];
-    if (enemyArray[x][y] > 0) {
-      console.log("You hitted");
+    if (enemyArray[x][y] === 1) {
       newArray[x][y] = 3;
       setEnemyArray(newArray);
       console.log(enemyArray);
     } else if (enemyArray[x][y] === 0) {
-      console.log("Missed");
       newArray[x][y] = 2;
       setEnemyArray(newArray);
     }
@@ -122,122 +125,124 @@ const CompBattleGrid = () => {
           }}
         ></FireCoordinatesY>
       </FireDiv>
-
-      <BattleGridsContainerGridY>
-        <YAxis />
-        <CompGridsContainer>
-          {enemyArray[0].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isHit={ele === 3 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {enemyArray[1].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isHit={ele === 3 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {enemyArray[2].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isHit={ele === 3 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {enemyArray[3].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isHit={ele === 3 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {enemyArray[4].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isHit={ele === 3 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {enemyArray[5].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isHit={ele === 3 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {enemyArray[6].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isHit={ele === 3 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {enemyArray[7].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isHit={ele === 3 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {enemyArray[8].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isHit={ele === 3 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {enemyArray[9].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isHit={ele === 3 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-        </CompGridsContainer>
-      </BattleGridsContainerGridY>
+      <BattleGridsContainerGridX>
+        <XAxis></XAxis>
+        <BattleGridsContainerGridY>
+          <YAxis />
+          <CompGridsContainer>
+            {enemyArray[0].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isHit={ele === 3 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {enemyArray[1].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isHit={ele === 3 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {enemyArray[2].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isHit={ele === 3 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {enemyArray[3].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isHit={ele === 3 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {enemyArray[4].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isHit={ele === 3 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {enemyArray[5].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isHit={ele === 3 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {enemyArray[6].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isHit={ele === 3 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {enemyArray[7].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isHit={ele === 3 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {enemyArray[8].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isHit={ele === 3 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {enemyArray[9].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isHit={ele === 3 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+          </CompGridsContainer>
+        </BattleGridsContainerGridY>
+      </BattleGridsContainerGridX>
     </>
   );
 };

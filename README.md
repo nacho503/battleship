@@ -1,6 +1,6 @@
 # Juego de Battleship
 
-Creado con React usando styled components y Flux.
+Creado con ReactJS usando styled components y Flux.
 
 ## Objetivo: Hundir la flota enemiga (computadora) antes que este hunda la propia.
 
@@ -14,7 +14,7 @@ Creado con React usando styled components y Flux.
 ### Algunos pendientes:
 
 1. Que no se repitan disparos en mismo punto.
-2. Marcadores de la grid.
-3. Condiciones de victoria.
-4. Setup de posiciones para jugador y computadora.
-5. Disparar con click.
+2. Condiciones de victoria.
+3. Setup de posiciones para jugador y computadora.
+4. Disparar con click.
+5. Ordenar componetes y variables para hacer la app mas entendible.

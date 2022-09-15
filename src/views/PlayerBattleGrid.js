@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import styled, { css } from "styled-components";
 import gameBoard from "../components/GameBoard";
 import { YAxis } from "./YAxis";
+import { XAxis } from "./XAxis";
 
 import { Context } from "../store/appContext";
 
@@ -48,6 +49,11 @@ const BattleGridsContainerGridY = styled.div`
   display: flex;
 `;
 
+const BattleGridsContainerGridX = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const PlayerBattleGrid = () => {
   const { store } = useContext(Context);
   let [playerArr, setPlayerArr] = useState(gameBoard);
@@ -72,131 +78,134 @@ const PlayerBattleGrid = () => {
 
   return (
     <>
-      <BattleGridsContainerGridY>
-        <YAxis></YAxis>
-        <PlayerGridsContainer>
-          {playerArr[0].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isaShip={ele === 1 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-                isHit={ele === 3 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {playerArr[1].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isaShip={ele === 1 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-                isHit={ele === 3 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {gameBoard[2].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isaShip={ele === 1 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-                isHit={ele === 3 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {gameBoard[3].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isaShip={ele === 1 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-                isHit={ele === 3 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {playerArr[4].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isaShip={ele === 1 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-                isHit={ele === 3 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {playerArr[5].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isaShip={ele === 1 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-                isHit={ele === 3 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {playerArr[6].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isaShip={ele === 1 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-                isHit={ele === 3 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {playerArr[7].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isaShip={ele === 1 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-                isHit={ele === 3 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {playerArr[8].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isaShip={ele === 1 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-                isHit={ele === 3 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-          {playerArr[9].map((ele, key) => {
-            return (
-              <GridSqrSea
-                key={key}
-                isaShip={ele === 1 ? true : false}
-                wasMissed={ele === 2 ? true : false}
-                isHit={ele === 3 ? true : false}
-              >
-                <p>{ele}</p>
-              </GridSqrSea>
-            );
-          })}
-        </PlayerGridsContainer>
-      </BattleGridsContainerGridY>
+      <BattleGridsContainerGridX>
+        <XAxis></XAxis>
+        <BattleGridsContainerGridY>
+          <YAxis></YAxis>
+          <PlayerGridsContainer>
+            {playerArr[0].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isaShip={ele === 1 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                  isHit={ele === 3 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {playerArr[1].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isaShip={ele === 1 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                  isHit={ele === 3 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {gameBoard[2].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isaShip={ele === 1 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                  isHit={ele === 3 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {gameBoard[3].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isaShip={ele === 1 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                  isHit={ele === 3 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {playerArr[4].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isaShip={ele === 1 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                  isHit={ele === 3 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {playerArr[5].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isaShip={ele === 1 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                  isHit={ele === 3 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {playerArr[6].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isaShip={ele === 1 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                  isHit={ele === 3 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {playerArr[7].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isaShip={ele === 1 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                  isHit={ele === 3 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {playerArr[8].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isaShip={ele === 1 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                  isHit={ele === 3 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+            {playerArr[9].map((ele, key) => {
+              return (
+                <GridSqrSea
+                  key={key}
+                  isaShip={ele === 1 ? true : false}
+                  wasMissed={ele === 2 ? true : false}
+                  isHit={ele === 3 ? true : false}
+                >
+                  <p>{ele}</p>
+                </GridSqrSea>
+              );
+            })}
+          </PlayerGridsContainer>
+        </BattleGridsContainerGridY>
+      </BattleGridsContainerGridX>
     </>
   );
 };
