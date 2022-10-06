@@ -26,9 +26,9 @@ const GridCoordContainer = styled.div`
 export const YAxis = () => {
   return (
     <GridCoordContainer>
-      {YcoordsArr.map((ele) => {
+      {YcoordsArr.map((ele, key) => {
         return (
-          <GridCoord>
+          <GridCoord key={key}>
             <p>{ele}</p>
           </GridCoord>
         );

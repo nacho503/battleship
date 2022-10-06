@@ -133,6 +133,10 @@ const CompBattleGrid = () => {
             {enemyArray[0].map((ele, key) => {
               return (
                 <GridSqrSea
+                  onClick={() => {
+                    setFireY(key);
+                    setFireX(0);
+                  }}
                   key={key}
                   isHit={ele === 3 ? true : false}
                   wasMissed={ele === 2 ? true : false}
@@ -144,6 +148,10 @@ const CompBattleGrid = () => {
             {enemyArray[1].map((ele, key) => {
               return (
                 <GridSqrSea
+                  onClick={() => {
+                    setFireY(key);
+                    setFireX(1);
+                  }}
                   key={key}
                   isHit={ele === 3 ? true : false}
                   wasMissed={ele === 2 ? true : false}
@@ -155,6 +163,10 @@ const CompBattleGrid = () => {
             {enemyArray[2].map((ele, key) => {
               return (
                 <GridSqrSea
+                  onClick={() => {
+                    setFireY(key);
+                    setFireX(2);
+                  }}
                   key={key}
                   isHit={ele === 3 ? true : false}
                   wasMissed={ele === 2 ? true : false}
@@ -166,6 +178,10 @@ const CompBattleGrid = () => {
             {enemyArray[3].map((ele, key) => {
               return (
                 <GridSqrSea
+                  onClick={() => {
+                    setFireY(key);
+                    setFireX(3);
+                  }}
                   key={key}
                   isHit={ele === 3 ? true : false}
                   wasMissed={ele === 2 ? true : false}
@@ -177,6 +193,10 @@ const CompBattleGrid = () => {
             {enemyArray[4].map((ele, key) => {
               return (
                 <GridSqrSea
+                  onClick={() => {
+                    setFireY(key);
+                    setFireX(4);
+                  }}
                   key={key}
                   isHit={ele === 3 ? true : false}
                   wasMissed={ele === 2 ? true : false}
@@ -188,6 +208,10 @@ const CompBattleGrid = () => {
             {enemyArray[5].map((ele, key) => {
               return (
                 <GridSqrSea
+                  onClick={() => {
+                    setFireY(key);
+                    setFireX(5);
+                  }}
                   key={key}
                   isHit={ele === 3 ? true : false}
                   wasMissed={ele === 2 ? true : false}
@@ -199,6 +223,10 @@ const CompBattleGrid = () => {
             {enemyArray[6].map((ele, key) => {
               return (
                 <GridSqrSea
+                  onClick={() => {
+                    setFireY(key);
+                    setFireX(6);
+                  }}
                   key={key}
                   isHit={ele === 3 ? true : false}
                   wasMissed={ele === 2 ? true : false}
@@ -210,6 +238,10 @@ const CompBattleGrid = () => {
             {enemyArray[7].map((ele, key) => {
               return (
                 <GridSqrSea
+                  onClick={() => {
+                    setFireY(key);
+                    setFireX(7);
+                  }}
                   key={key}
                   isHit={ele === 3 ? true : false}
                   wasMissed={ele === 2 ? true : false}
@@ -221,6 +253,10 @@ const CompBattleGrid = () => {
             {enemyArray[8].map((ele, key) => {
               return (
                 <GridSqrSea
+                  onClick={() => {
+                    setFireY(key);
+                    setFireX(8);
+                  }}
                   key={key}
                   isHit={ele === 3 ? true : false}
                   wasMissed={ele === 2 ? true : false}
@@ -232,6 +268,10 @@ const CompBattleGrid = () => {
             {enemyArray[9].map((ele, key) => {
               return (
                 <GridSqrSea
+                  onClick={() => {
+                    setFireY(key);
+                    setFireX(9);
+                  }}
                   key={key}
                   isHit={ele === 3 ? true : false}
                   wasMissed={ele === 2 ? true : false}

@@ -25,9 +25,9 @@ const GridCoordContainer = styled.div`
 export const XAxis = () => {
   return (
     <GridCoordContainer>
-      {XcoordsArr.map((ele) => {
+      {XcoordsArr.map((ele, key) => {
         return (
-          <GridCoord>
+          <GridCoord key={key}>
             <p>{ele}</p>
           </GridCoord>
         );

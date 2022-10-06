@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PlayerBattleGrid from "./PlayerBattleGrid";
 import CompBattleGrid from "./CompBattleGrid";
+import bkg from "../img/bkg.jpg";
 
 //Controls Container
 const ControlsContainer = styled.div`
@@ -23,6 +24,7 @@ const Blogo = styled.h1`
 const BattleGridsContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
+  /* background-image: url(${bkg}); */
 `;
 
 const ControlsContainerView = () => {
