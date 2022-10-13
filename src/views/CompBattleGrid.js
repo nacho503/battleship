@@ -36,6 +36,11 @@ const GridSqrSea = styled.div`
     css`
       background-color: yellow;
     `}
+    ${(props) =>
+    props.isSelected &&
+    css`
+      background-color: orange;
+    `}
 `;
 
 const BattleGridsContainerGridY = styled.div`

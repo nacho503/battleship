@@ -16,5 +16,7 @@ Creado con ReactJS usando styled components y Flux.
 1. Que no se repitan disparos en mismo punto.
 2. Condiciones de victoria.
 3. Setup de posiciones para jugador y computadora.
-4. Disparar con doble click, ya que solo se pueden seleccionar las coordenadas escribiendolas o haciendo click en fire.
+4. Disparar con doble modal.
 5. Ordenar componetes y variables para hacer la app mas entendible.
+   5.a Separar los styled components en archivos separados para hacer el código mas legible.
+6. Coloreado de seleccion.
