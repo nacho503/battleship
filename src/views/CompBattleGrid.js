@@ -60,7 +60,8 @@ const FireButton = styled.button`
   background-color: #ef0107;
   color: white;
   font-family: "Bangers", cursive;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
   &:hover {
     background-color: #aa0000;
     cursor: pointer;
@@ -78,6 +79,10 @@ const FireDiv = styled.div`
   display: flex;
   flex-direction: column;
   width: 5rem;
+  @media (max-width: 768px) {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
 `;
 
 const CompBattleGrid = () => {
@@ -112,7 +117,7 @@ const CompBattleGrid = () => {
     <>
       <FireDiv>
         <FireButton onClick={() => fireButtonClick(fireX, fireY)}>
-          Fire!
+          Push to fire!
         </FireButton>
         <br></br>
         <label>X 0-9:</label>
