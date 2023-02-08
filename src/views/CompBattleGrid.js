@@ -50,6 +50,8 @@ const BattleGridsContainerGridY = styled.div`
 const BattleGridsContainerGridX = styled.div`
   display: flex;
   flex-direction: column;
+  font-size: 1.2rem;
+  font-weight: bold;
 `;
 
 const FireButton = styled.button`
@@ -87,6 +89,7 @@ const FireDiv = styled.div`
 
 const CompBattleGrid = () => {
   const { actions } = useContext(Context);
+  const { store } = useContext(Context);
   let [enemyArray, setEnemyArray] = useState(enemyGameBoard);
   let [fireX, setFireX] = useState("");
   let [fireY, setFireY] = useState("");
@@ -104,13 +107,16 @@ const CompBattleGrid = () => {
     setFireX("");
     setFireY("");
 
-    enemyTargetGen();
+    enemyTargetGen(); //Dispara cuando el jugador ha disparado
   };
 
   let enemyTargetGen = () => {
+    // let repCheck = true;
     let xEnemy = Math.floor(Math.random() * 10);
     let yEnemy = Math.floor(Math.random() * 10);
+    console.log(actions.filterCompTargets(xEnemy, yEnemy), [xEnemy, yEnemy]); //If TRUE (computer is firing on same location), find way to fire again
     actions.setCompTarget(xEnemy, yEnemy);
+    console.log(store.compTargets);
   };
 
   return (
@@ -136,6 +142,7 @@ const CompBattleGrid = () => {
         ></FireCoordinatesY>
       </FireDiv>
       <BattleGridsContainerGridX>
+        Computer
         <XAxis></XAxis>
         <BattleGridsContainerGridY>
           <YAxis />

@@ -52,6 +52,8 @@ const BattleGridsContainerGridY = styled.div`
 const BattleGridsContainerGridX = styled.div`
   display: flex;
   flex-direction: column;
+  font-size: 1.2rem;
+  font-weight: bold;
 `;
 
 const PlayerBattleGrid = () => {
@@ -65,20 +67,19 @@ const PlayerBattleGrid = () => {
     if (store.compTarget.length !== 0 && displayedArr[enemyX][enemyY] === 1) {
       displayedArr[enemyX][enemyY] = 3;
       setPlayerArr(displayedArr);
-      console.log("enemy hit, sorry");
     } else if (
       store.compTarget.length !== 0 &&
       displayedArr[enemyX][enemyY] === 0
     ) {
       displayedArr[enemyX][enemyY] = 2;
       setPlayerArr(displayedArr);
-      console.log("enemy hit, sorry");
     }
   }, [playerArr, store.compTarget]);
 
   return (
     <>
       <BattleGridsContainerGridX>
+        Player
         <XAxis></XAxis>
         <BattleGridsContainerGridY>
           <YAxis></YAxis>
