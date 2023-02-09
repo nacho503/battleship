@@ -89,7 +89,7 @@ const FireDiv = styled.div`
 
 const CompBattleGrid = () => {
   const { actions } = useContext(Context);
-  const { store } = useContext(Context);
+  // const { store } = useContext(Context);
   let [enemyArray, setEnemyArray] = useState(enemyGameBoard);
   let [fireX, setFireX] = useState("");
   let [fireY, setFireY] = useState("");
@@ -99,7 +99,6 @@ const CompBattleGrid = () => {
     if (enemyArray[x][y] === 1) {
       newArray[x][y] = 3;
       setEnemyArray(newArray);
-      console.log(enemyArray);
     } else if (enemyArray[x][y] === 0) {
       newArray[x][y] = 2;
       setEnemyArray(newArray);
@@ -107,16 +106,22 @@ const CompBattleGrid = () => {
     setFireX("");
     setFireY("");
 
-    enemyTargetGen(); //Dispara cuando el jugador ha disparado
+    enemyTargetGen();
   };
 
   let enemyTargetGen = () => {
-    // let repCheck = true;
     let xEnemy = Math.floor(Math.random() * 10);
     let yEnemy = Math.floor(Math.random() * 10);
-    console.log(actions.filterCompTargets(xEnemy, yEnemy), [xEnemy, yEnemy]); //If TRUE (computer is firing on same location), find way to fire again
-    actions.setCompTarget(xEnemy, yEnemy);
-    console.log(store.compTargets);
+    if (actions.filterCompTargets(xEnemy, yEnemy)) {
+      console.log("shoots again!");
+      xEnemy = Math.floor(Math.random() * 10);
+      yEnemy = Math.floor(Math.random() * 10);
+      actions.setCompTarget(xEnemy, yEnemy);
+      actions.setCompTargets(xEnemy, yEnemy);
+    } else {
+      actions.setCompTarget(xEnemy, yEnemy);
+      actions.setCompTargets(xEnemy, yEnemy);
+    }
   };
 
   return (

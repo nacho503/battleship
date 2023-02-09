@@ -1,22 +1,20 @@
-# Juego de Battleship
+# Battleship game
 
-Creado con ReactJS usando styled components y Flux.
+Using ReactJS, styled components and Flux for the store.
 
-## Objetivo: Hundir la flota enemiga (computadora) antes que este hunda la propia.
+## Objective: Sink enemy ships.
 
-### Para probar:
+### For testing:
 
-1. Con la consola: npm install (para instalar paquetes).
-2. Con la consola: npm start.
-3. Ingresar coordenadas X e Y y pulsar el botón de disparo (fire).
-4. Cada vez que realices un disparo, la computadora atacará. Podrás ver el ataque de la computadora en en tablero azul.
+1. In the console: npm install.
+2. In the console: npm start.
+3. Set the coordenates and push the fire button.
+4. Computer will attack automatically after your attack.
 
-### Algunos pendientes:
+### Pendings:
 
-1. Que no se repitan disparos en mismo punto.
-2. Condiciones de victoria.
-3. Setup de posiciones para jugador y computadora.
-4. Disparar con doble modal.
-5. Ordenar componetes y variables para hacer la app mas entendible.
-   5.a Separar los styled components en archivos separados para hacer el código mas legible.
-6. Coloreado de seleccion.
+1. No repetition of shots.
+2. Victory conditions.
+3. Custom initial setup.
+4. Re-structure code (styled components into another folder).
+5. Color selection.

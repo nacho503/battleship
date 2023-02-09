@@ -1,16 +1,19 @@
 const getState = ({ setStore, getActions, getStore }) => {
   return {
     store: {
-      compTarget: [], //valores para x e y
+      compTarget: [],
       compTargets: [],
     },
     actions: {
       setCompTarget: (x, y) => {
-        const store = getStore();
         setStore({ compTarget: [x, y] });
+      },
+      setCompTargets: (x, y) => {
+        const store = getStore();
         setStore({ compTargets: [...store.compTargets, [x, y]] });
       },
       filterCompTargets: (x, y) => {
+        //True if found x,y on the compTargets array
         const store = getStore();
         let targetsArr = store.compTargets;
         let searchCoords = false;
